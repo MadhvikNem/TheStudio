@@ -9,27 +9,719 @@
 </head>
 
 
-<style>
-    button {
-        border: 10px orange;
-        padding: 40px 40px;
-        border-radius: 5px;
-        display: inline-block;
-        margin: 4px 2px;
-        cursor: pointer;
-        position: center center;
-        background-color: black;
-    }
-    
-    button:hover {
-        background-color: rgb(255, 255, 255);
-        border-color: orange;
-    }
-    
-    button:focus {
-        background-color: orange;
-    }
-</style>
+
+
+<center>
+
+
+
+    <style>
+        #panel {
+            width: 1150px;
+            height: 800px;
+            position: center relative;
+            padding: 50px;
+        }
+        
+        #panel-image {
+            width: 1150px;
+            height: 800px;
+            position: center absolute;
+            top: 1000px;
+            left: 500px;
+            z-index: -1;
+        }
+        
+        .music-button {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .music-button.playing {
+            border: 10px solid red;
+        }
+        
+        #button-a {
+            top: 279.5px;
+            left: 202px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-b {
+            top: 279.5px;
+            left: 299px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 184px;
+            height: 82px;
+        }
+        
+        #button-c {
+            top: 279px;
+            left: 497px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-d {
+            top: 279px;
+            left: 596.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-e {
+            top: 279px;
+            left: 694px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-f {
+            top: 279px;
+            left: 793.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 182px;
+            height: 82px;
+        }
+        
+        #button-g {
+            top: 278.5px;
+            left: 988.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-a:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-a:hover {
+            background-color: orange;
+        }
+        
+        #button-b:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-b:hover {
+            background-color: orange;
+        }
+        
+        #button-c:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-c:hover {
+            background-color: orange;
+        }
+        
+        #button-d:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-d:hover {
+            background-color: orange;
+        }
+        
+        #button-e:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-e:hover {
+            background-color: orange;
+        }
+        
+        #button-f:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-f:hover {
+            background-color: orange;
+        }
+        
+        #button-g:active {
+            background-color: orange;
+            border-color: orange;
+        }
+        
+        #button-g:hover {
+            background-color: orange;
+        }
+        
+        #button-h {
+            top: 375.5px;
+            left: 202px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-i {
+            top: 375.5px;
+            left: 299px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 184px;
+            height: 82px;
+        }
+        
+        #button-j {
+            top: 375px;
+            left: 497px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-k {
+            top: 375px;
+            left: 596.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 181px;
+            height: 82px;
+        }
+        
+        #button-l {
+            top: 375px;
+            left: 794px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-m {
+            top: 375.5px;
+            left: 890.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 181px;
+            height: 82px;
+        }
+        
+        #button-h:active {
+            background-color: rgb(0, 183, 255);
+            border-color: rgb(0, 183, 255);
+        }
+        
+        #button-h:hover {
+            background-color: rgb(0, 183, 255);
+        }
+        
+        #button-i:active {
+            background-color: rgb(0, 183, 255);
+            border-color: rgb(0, 183, 255);
+        }
+        
+        #button-i:hover {
+            background-color: rgb(0, 183, 255);
+        }
+        
+        #button-j:active {
+            background-color: rgb(0, 183, 255);
+            border-color: rgb(0, 183, 255);
+        }
+        
+        #button-j:hover {
+            background-color: rgb(0, 183, 255);
+        }
+        
+        #button-k:active {
+            background-color: rgb(0, 183, 255);
+            border-color: rgb(0, 183, 255);
+        }
+        
+        #button-k:hover {
+            background-color: rgb(0, 183, 255);
+        }
+        
+        #button-l:active {
+            background-color: rgb(0, 183, 255);
+            border-color: rgb(0, 183, 255);
+        }
+        
+        #button-l:hover {
+            background-color: rgb(0, 183, 255);
+        }
+        
+        #button-m:active {
+            background-color: rgb(0, 183, 255);
+            border-color: rgb(0, 183, 255);
+        }
+        
+        #button-m:hover {
+            background-color: rgb(0, 183, 255);
+        }
+        
+        #button-n {
+            top: 472px;
+            left: 202px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-o {
+            top: 472px;
+            left: 299px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-p {
+            top: 471.5px;
+            left: 401px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 180px;
+            height: 82px;
+        }
+        
+        #button-q {
+            top: 471.5px;
+            left: 596.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-r {
+            top: 471.5px;
+            left: 695px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 181px;
+            height: 82px;
+        }
+        
+        #button-s {
+            top: 471.5px;
+            left: 891.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 82px;
+            height: 82px;
+        }
+        
+        #button-t {
+            top: 471px;
+            left: 988.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-n:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-n:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-o:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-o:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-p:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-p:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-q:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-q:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-r:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-r:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-s:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-s:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-t:active {
+            background-color: rgb(0, 194, 48);
+            border-color: rgb(0, 194, 48);
+        }
+        
+        #button-t:hover {
+            background-color: rgb(0, 194, 48);
+        }
+        
+        #button-u {
+            top: 570px;
+            left: 201px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-v {
+            top: 570px;
+            left: 299px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-x {
+            top: 570px;
+            left: 400px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 476.5px;
+            height: 82px;
+        }
+        
+        #button-y {
+            top: 570px;
+            left: 890.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-z {
+            top: 569px;
+            left: 989px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 83px;
+            height: 82px;
+        }
+        
+        #button-u:active {
+            background-color: rgb(214, 0, 0);
+            border-color: rgb(214, 0, 0);
+        }
+        
+        #button-u:hover {
+            background-color: rgb(214, 0, 0);
+        }
+        
+        #button-v:active {
+            background-color: rgb(214, 0, 0);
+            border-color: rgb(214, 0, 0);
+        }
+        
+        #button-v:hover {
+            background-color: rgb(214, 0, 0);
+        }
+        
+        #button-x:active {
+            background-color: rgb(214, 0, 0);
+            border-color: rgb(214, 0, 0);
+        }
+        
+        #button-x:hover {
+            background-color: rgb(214, 0, 0);
+        }
+        
+        #button-y:active {
+            background-color: rgb(214, 0, 0);
+            border-color: rgb(214, 0, 0);
+        }
+        
+        #button-y:hover {
+            background-color: rgb(214, 0, 0);
+        }
+        
+        #button-z:active {
+            background-color: rgb(214, 0, 0);
+            border-color: rgb(214, 0, 0);
+        }
+        
+        #button-z:hover {
+            background-color: rgb(214, 0, 0);
+        }
+        
+        #button-ab {
+            top: 668px;
+            left: 201px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 379px;
+            height: 82px;
+        }
+        
+        #button-bc {
+            top: 668px;
+            left: 595.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+        }
+        
+        #button-cd {
+            top: 668px;
+            left: 693px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 379px;
+            height: 82px;
+        }
+        
+        #button-ab:active {
+            background-color: rgb(248, 232, 6);
+            border-color: rgb(248, 232, 6);
+        }
+        
+        #button-ab:hover {
+            background-color: rgb(248, 232, 6);
+        }
+        
+        #button-bc:active {
+            background-color: rgb(248, 232, 6);
+            border-color: rgb(248, 232, 6);
+        }
+        
+        #button-bc:hover {
+            background-color: rgb(248, 232, 6);
+        }
+        
+        #button-cd:active {
+            background-color: rgb(248, 232, 6);
+            border-color: rgb(248, 232, 6);
+        }
+        
+        #button-cd:hover {
+            background-color: rgb(248, 232, 6);
+        }
+    </style>
+
+
+</center>
+
+
+
+
+
 
 
 
@@ -64,7 +756,7 @@
         background-color: black;
         background-image: url("Music Studio-05.png");
         background-repeat: no-repeat;
-        background-attachment: fixed;
+        background-attachment: absolute fixed;
         background-size: 50%;
         background-position: center center;
         background-origin: padding-box;
@@ -82,31 +774,119 @@
 
 
 
-
-
-        <audio id="button" src="disco-guitar-notes-2.wav" preload="auto" loop="true"></audio>
-        <button onclick="document.getElementById('button').play();"></button>
-
+        <div id="panel">
+            <img id="panel-image" src="Music Studio-05.png" alt="" srcset="" />
 
 
 
 
 
+            <audio id="button-a" src="disco-guitar-notes-2.wav" preload="auto" loop="false"></audio>
+            <button id="button-a" class="music-button" onclick="document.getElementById('button-a').play();"></button>
+
+            <audio id="button-b" src="disco-guitar-notes-3.wav" preload="auto" loop="false"></audio>
+            <button id="button-b" class="music-button" onclick="document.getElementById('button-b').play();"></button>
+
+            <audio id="button-c" src="electric_guitarpluck.wav" preload="auto" loop="false"></audio>
+            <button id="button-c" class="music-button" onclick="document.getElementById('button-c').play();"></button>
+
+            <audio id="button-d" src="forever-tremelo-chord.wav" preload="auto" loop="false"></audio>
+            <button id="button-d" class="music-button" onclick="document.getElementById('button-d').play();"></button>
+
+            <audio id="button-e" src="fret-me-down.wav" preload="auto" loop="false"></audio>
+            <button id="button-e" class="music-button" onclick="document.getElementById('button-e').play();"></button>
+
+            <audio id="button-f" src="074_acoustic-guitar-strummy1.wav" preload="auto" loop="false"></audio>
+            <button id="button-f" class="music-button" onclick="document.getElementById('button-f').play();"></button>
+
+            <audio id="button-g" src="090_funk-rhythm-guitar.wav" preload="auto" loop="false"></audio>
+            <button id="button-g" class="music-button" onclick="document.getElementById('button-g').play();"></button>
 
 
-        <figure>
-
-            <audio controls src="disco-guitar-notes-2.wav" loop="true">
-                        Your browser does not support the
-                        <code>audio</code> element.
-                </audio>
-        </figure>
-
-        <embed height="60" type="audio/wav" width="144" src="disco-guitar-notes-2.wav" volume="60" loop="false" autostart="true" />
 
 
+            <audio id="button-h" src="050_udu_groove-1.wav" preload="auto" loop="false"></audio>
+            <button id="button-h" class="music-button" onclick="document.getElementById('button-h').play();"></button>
 
-        <img src="Music Studio-05.png" alt="img1" width="1150px" height="800px">
+            <audio id="button-i" src="064_atmospheric-paddy.wav" preload="auto" loop="true"></audio>
+            <button id="button-i" class="music-button" onclick="document.getElementById('button-i').play();"></button>
+
+            <audio id="button-j" src="070_led_zeppelin.wav" preload="auto" loop="false"></audio>
+            <button id="button-j" class="music-button" onclick="document.getElementById('button-j').play();"></button>
+
+            <audio id="button-k" src="070_super_slow_ghost_3.wav" preload="auto" loop="false"></audio>
+            <button id="button-k" class="music-button" onclick="document.getElementById('button-k').play();"></button>
+
+            <audio id="button-l" src="075_lofi_basic_groove.wav" preload="auto" loop="false"></audio>
+            <button id="button-l" class="music-button" onclick="document.getElementById('button-l').play();"></button>
+
+            <audio id="button-m" src="077_FoolYourself.wav" preload="auto" loop="false"></audio>
+            <button id="button-m" class="music-button" onclick="document.getElementById('button-m').play();"></button>
+
+
+
+
+            <audio id="button-n" src="afroflute_2.wav" preload="auto" loop="false"></audio>
+            <button id="button-n" class="music-button" onclick="document.getElementById('button-n').play();"></button>
+
+            <audio id="button-o" src="flute-c2.wav" preload="auto" loop="false"></audio>
+            <button id="button-o" class="music-button" onclick="document.getElementById('button-o').play();"></button>
+
+            <audio id="button-p" src="flute-jazzriff1.wav" preload="auto" loop="false"></audio>
+            <button id="button-p" class="music-button" onclick="document.getElementById('button-p').play();"></button>
+
+            <audio id="button-q" src="japanese_wood_flute.wav" preload="auto" loop="false"></audio>
+            <button id="button-q" class="music-button" onclick="document.getElementById('button-q').play();"></button>
+
+            <audio id="button-r" src="brass-a7th-hit.wav" preload="auto" loop="false"></audio>
+            <button id="button-r" class="music-button" onclick="document.getElementById('button-r').play();"></button>
+
+            <audio id="button-s" src="sax-session-with-josh.mp3" preload="auto" loop="false"></audio>
+            <button id="button-s" class="music-button" onclick="document.getElementById('button-s').play();"></button>
+
+            <audio id="button-t" src="mournful-horn.wav" preload="auto" loop="false"></audio>
+            <button id="button-t" class="music-button" onclick="document.getElementById('button-t').play();"></button>
+
+
+
+
+            <audio id="button-u" src="electric-piano-mellow-c-chord.wav" preload="auto" loop="false"></audio>
+            <button id="button-u" class="music-button" onclick="document.getElementById('button-u').play();"></button>
+
+            <audio id="button-v" src="twotone-lopass-mysteryinst.wav" preload="auto" loop="false"></audio>
+            <button id="button-v" class="music-button" onclick="document.getElementById('button-v').play();"></button>
+
+            <audio id="button-x" src="uno-duo-stereo-epiano-chord.wav" preload="auto" loop="false"></audio>
+            <button id="button-x" class="music-button" onclick="document.getElementById('button-x').play();"></button>
+
+            <audio id="button-y" src="one-mellow-piano-seventh.wav" preload="auto" loop="false"></audio>
+            <button id="button-y" class="music-button" onclick="document.getElementById('button-y').play();"></button>
+
+            <audio id="button-z" src="wobbly-swell-chord-D.wav" preload="auto" loop="false"></audio>
+            <button id="button-z" class="music-button" onclick="document.getElementById('button-z').play();"></button>
+
+
+
+
+            <audio id="button-ab" src="070_muted_funkiness.wav" preload="auto" loop="false"></audio>
+            <button id="button-ab" class="music-button" onclick="document.getElementById('button-ab').play();"></button>
+
+            <audio id="button-bc" src="120_do-do-do-do-vocals.wav" preload="auto" loop="false"></audio>
+            <button id="button-bc" class="music-button" onclick="document.getElementById('button-bc').play();"></button>
+
+            <audio id="button-cd" src="089_electro-funk.wav" preload="auto" loop="false"></audio>
+            <button id="button-cd" class="music-button" onclick="document.getElementById('button-cd').play();"></button>
+
+
+        </div>
+
+
+
+
+
+
+
+
 
 
 
