@@ -1,0 +1,11 @@
+body {
+    background-color: black;
+    background-image: url("Music Studio-04.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll vertical;
+    background-size: cover;
+}
+
+audio {
+    background-color: black;
+}
