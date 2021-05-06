@@ -15,6 +15,8 @@
 
 
 
+
+
     <style>
         #panel {
             width: 1150px;
@@ -33,6 +35,71 @@
         
         .music-button {
             position: absolute;
+        }
+        
+        @keyframes blinking {
+            0% {
+                background-color: #ff3d50;
+                border: 5px solid #871924;
+            }
+            /* YOU CAN ADD MORE COLORS IN THE KEYFRAMES IF YOU WANT
+  50% {
+    background-color: #55d66b;
+    border: 5px solid #126620;
+  }
+  */
+            100% {
+                background-color: #222291;
+                border: 5px solid #6565f2;
+            }
+        }
+        
+        #button-loop {
+            top: 181px;
+            left: 400px;
+            border: 1px rgb(255, 255, 255);
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(255, 255, 255);
+            width: 184px;
+            height: 82px;
+            opacity: 0%;
+        }
+        
+        #pause {
+            top: 181px;
+            left: 596.5px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 84px;
+            height: 82px;
+            opacity: 0%;
+        }
+        
+        #placeholder {
+            top: 180px;
+            left: 692px;
+            border: 1px orange;
+            padding: 10px 10px;
+            border-radius: 9px;
+            display: inline-block;
+            margin: 2px 2px;
+            cursor: pointer;
+            position: center center;
+            background-color: rgb(0, 0, 0);
+            width: 385px;
+            height: 87px;
+            opacity: 0%;
         }
         
         #button-a {
@@ -138,9 +205,33 @@
             height: 82px;
         }
         
+        #button-loop:active {
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(255, 255, 255);
+            opacity: 100%;
+        }
+        
+        #button-loop:hover {
+            background-color: rgb(255, 255, 255);
+            opacity: 100%;
+        }
+        
+        #pause:active {
+            background-color: rgb(255, 255, 255);
+            border-color: rgb(255, 255, 255);
+            opacity: 100%;
+        }
+        
+        #pause:hover {
+            background-color: rgb(255, 255, 255);
+            opacity: 100%;
+        }
+        
         #button-a:active {
             background-color: orange;
             border-color: orange;
+            opacity: 50%;
+            color: fixed;
         }
         
         #button-a:hover {
@@ -726,9 +817,10 @@
     }
     
     body {
-        background: linear-gradient(-45deg, #cf0000, #0e00d4, #ffe600, #7cdb00);
+        background-color: rgb(12, 12, 12);
+        /* background: linear-gradient(-45deg, #cf0000, #0e00d4, #ffe600, #7cdb00);
         background-size: 100% 100%;
-        animation: gradient 15s ease infinite;
+        animation: gradient 15s ease infinite; */
     }
     
     @keyframes gradient {
@@ -757,120 +849,655 @@
         background-color: black;
         opacity: 0;
     }
+    
+    .active {
+        background-color: #7FFF00;
+    }
+    
+    .inactive {
+        background-color: #FFFFFF;
+    }
 </style>
 
+
+
+
+
 <body>
+
 
     <center>
 
 
 
+
+
+
+
         <div id="panel">
-            <img id="panel-image" src="Music Studio-05.png" alt="" srcset="" />
+            <img id="panel-image" src="Music Studio-01.png" alt="" srcset="" />
 
 
 
 
 
-            <audio id="button-a" src="disco-guitar-notes-2.wav" preload="auto" loop="false"></audio>
-            <button id="button-a" class="music-button" onclick="document.getElementById('button-a').play();"></button>
-
-            <audio id="button-b" src="disco-guitar-notes-3.wav" preload="auto" loop="false"></audio>
-            <button id="button-b" class="music-button" onclick="document.getElementById('button-b').play();"></button>
-
-            <audio id="button-c" src="electric_guitarpluck.wav" preload="auto" loop="false"></audio>
-            <button id="button-c" class="music-button" onclick="document.getElementById('button-c').play();"></button>
-
-            <audio id="button-d" src="forever-tremelo-chord.wav" preload="auto" loop="false"></audio>
-            <button id="button-d" class="music-button" onclick="document.getElementById('button-d').play();"></button>
-
-            <audio id="button-e" src="fret-me-down.wav" preload="auto" loop="false"></audio>
-            <button id="button-e" class="music-button" onclick="document.getElementById('button-e').play();"></button>
-
-            <audio id="button-f" src="074_acoustic-guitar-strummy1.wav" preload="auto" loop="false"></audio>
-            <button id="button-f" class="music-button" onclick="document.getElementById('button-f').play();"></button>
-
-            <audio id="button-g" src="090_funk-rhythm-guitar.wav" preload="auto" loop="false"></audio>
-            <button id="button-g" class="music-button" onclick="document.getElementById('button-g').play();"></button>
 
 
 
+            <audio id="button-a" src="sizzling-drums-loop-trap-beat-with-bass_140bpm.wav" preload="auto" loop="true" style="color:white"></audio>
+            <button id="button-a" class="music-button" onclick="playPause(), setColor('button','#101010')"></button>
 
-            <audio id="button-h" src="050_udu_groove-1.wav" preload="auto" loop="false"></audio>
-            <button id="button-h" class="music-button" onclick="document.getElementById('button-h').play();"></button>
+            <audio id="button-b" src="aesthetic-pop-drums_137bpm_A_major.wav" preload="auto " loop="true"></audio>
+            <button id="button-b" class="music-button" onclick="playPauseb()"></button>
 
-            <audio id="button-i" src="064_atmospheric-paddy.wav" preload="auto" loop="true"></audio>
-            <button id="button-i" class="music-button" onclick="document.getElementById('button-i').play();"></button>
+            <audio id="button-c" src="organ-drill-atmospheric-soft-loop_140bpm_D#_minor.wav" preload="auto " loop="true"></audio>
+            <button id="button-c" class="music-button" onclick="playPausec()"></button>
 
-            <audio id="button-j" src="070_led_zeppelin.wav" preload="auto" loop="false"></audio>
-            <button id="button-j" class="music-button" onclick="document.getElementById('button-j').play();"></button>
+            <audio id="button-d" src="tyga-type-piano-melody-bright-loop_106bpm_C_major.wav" preload="auto " loop="true"></audio>
+            <button id="button-d" class="music-button" onclick="playPaused()"></button>
 
-            <audio id="button-k" src="070_super_slow_ghost_3.wav" preload="auto" loop="false"></audio>
-            <button id="button-k" class="music-button" onclick="document.getElementById('button-k').play();"></button>
+            <audio id="button-e" src="organ-bright-keys_141bpm_G_major.wav" preload="auto " loop="true"></audio>
+            <button id="button-e" class="music-button" onclick="playPausee()"></button>
 
-            <audio id="button-l" src="075_lofi_basic_groove.wav" preload="auto" loop="false"></audio>
-            <button id="button-l" class="music-button" onclick="document.getElementById('button-l').play();"></button>
+            <audio id="button-f" src="074_acoustic-guitar-strummy1.wav " preload="auto " loop="true"></audio>
+            <button id="button-f" class="music-button" onclick="playPausef()"></button>
 
-            <audio id="button-m" src="077_FoolYourself.wav" preload="auto" loop="false"></audio>
-            <button id="button-m" class="music-button" onclick="document.getElementById('button-m').play();"></button>
+            <audio id="button-g" src="090_funk-rhythm-guitar.wav " preload="auto " loop="false "></audio>
+            <button id="button-g" class="music-button" onclick="playPauseg()"></button>
 
 
 
 
-            <audio id="button-n" src="afroflute_2.wav" preload="auto" loop="false"></audio>
-            <button id="button-n" class="music-button" onclick="document.getElementById('button-n').play();"></button>
+            <audio id="button-h" src="050_udu_groove-1.wav " preload="auto " loop="false "></audio>
+            <button id="button-h" class="music-button" onclick="playPauseh()"></button>
 
-            <audio id="button-o" src="flute-c2.wav" preload="auto" loop="false"></audio>
-            <button id="button-o" class="music-button" onclick="document.getElementById('button-o').play();"></button>
+            <audio id="button-i" src="064_atmospheric-paddy.wav " preload="auto " loop="true"></audio>
+            <button id="button-i" class="music-button" onclick="playPausei()"></button>
 
-            <audio id="button-p" src="flute-jazzriff1.wav" preload="auto" loop="false"></audio>
-            <button id="button-p" class="music-button" onclick="document.getElementById('button-p').play();"></button>
+            <audio id="button-j" src="070_led_zeppelin.wav " preload="auto " loop="false "></audio>
+            <button id="button-j" class="music-button" onclick="playPausej()"></button>
 
-            <audio id="button-q" src="japanese_wood_flute.wav" preload="auto" loop="false"></audio>
-            <button id="button-q" class="music-button" onclick="document.getElementById('button-q').play();"></button>
+            <audio id="button-k" src="070_super_slow_ghost_3.wav " preload="auto " loop="false "></audio>
+            <button id="button-k" class="music-button" onclick="playPausek()"></button>
 
-            <audio id="button-r" src="brass-a7th-hit.wav" preload="auto" loop="false"></audio>
-            <button id="button-r" class="music-button" onclick="document.getElementById('button-r').play();"></button>
+            <audio id="button-l" src="075_lofi_basic_groove.wav " preload="auto " loop="false "></audio>
+            <button id="button-l" class="music-button" onclick="playPausel()"></button>
 
-            <audio id="button-s" src="sax-session-with-josh.mp3" preload="auto" loop="false"></audio>
-            <button id="button-s" class="music-button" onclick="document.getElementById('button-s').play();"></button>
-
-            <audio id="button-t" src="mournful-horn.wav" preload="auto" loop="false"></audio>
-            <button id="button-t" class="music-button" onclick="document.getElementById('button-t').play();"></button>
+            <audio id="button-m" src="077_FoolYourself.wav " preload="auto " loop="false "></audio>
+            <button id="button-m" class="music-button" onclick="playPausem()"></button>
 
 
 
 
-            <audio id="button-u" src="electric-piano-mellow-c-chord.wav" preload="auto" loop="false"></audio>
-            <button id="button-u" class="music-button" onclick="document.getElementById('button-u').play();"></button>
+            <audio id="button-n" src="afroflute_2.wav " preload="auto " loop="false "></audio>
+            <button id="button-n" class="music-button" onclick="playPausen()"></button>
 
-            <audio id="button-v" src="twotone-lopass-mysteryinst.wav" preload="auto" loop="false"></audio>
-            <button id="button-v" class="music-button" onclick="document.getElementById('button-v').play();"></button>
+            <audio id="button-o" src="flute-c2.wav" preload="auto " loop="false "></audio>
+            <button id="button-o" class="music-button" onclick="playPauseo()"></button>
 
-            <audio id="button-x" src="uno-duo-stereo-epiano-chord.wav" preload="auto" loop="false"></audio>
-            <button id="button-x" class="music-button" onclick="document.getElementById('button-x').play();"></button>
+            <audio id="button-p" src="flute-jazzriff1.wav " preload="auto " loop="false "></audio>
+            <button id="button-p" class="music-button" onclick="playPausep()"></button>
 
-            <audio id="button-y" src="one-mellow-piano-seventh.wav" preload="auto" loop="false"></audio>
-            <button id="button-y" class="music-button" onclick="document.getElementById('button-y').play();"></button>
+            <audio id="button-q" src="japanese_wood_flute.wav " preload="auto " loop="false "></audio>
+            <button id="button-q" class="music-button" onclick="playPauseq()"></button>
 
-            <audio id="button-z" src="wobbly-swell-chord-D.wav" preload="auto" loop="false"></audio>
-            <button id="button-z" class="music-button" onclick="document.getElementById('button-z').play();"></button>
+            <audio id="button-r" src="brass-a7th-hit.wav " preload="auto " loop="false "></audio>
+            <button id="button-r" class="music-button" onclick="playPauser()"></button>
+
+            <audio id="button-s" src="sax-session-with-josh.mp3 " preload="auto " loop="false "></audio>
+            <button id="button-s" class="music-button" onclick="playPauses()"></button>
+
+            <audio id="button-t" src="mournful-horn.wav " preload="auto " loop="false "></audio>
+            <button id="button-t" class="music-button" onclick="playPauset()"></button>
 
 
 
 
-            <audio id="button-ab" src="070_muted_funkiness.wav" preload="auto" loop="false"></audio>
-            <button id="button-ab" class="music-button" onclick="document.getElementById('button-ab').play();"></button>
+            <audio id="button-u" src="electric-piano-mellow-c-chord.wav " preload="auto " loop="false "></audio>
+            <button id="button-u" class="music-button" onclick="playPauseu()"></button>
 
-            <audio id="button-bc" src="120_do-do-do-do-vocals.wav" preload="auto" loop="false"></audio>
-            <button id="button-bc" class="music-button" onclick="document.getElementById('button-bc').play();"></button>
+            <audio id="button-v" src="twotone-lopass-mysteryinst.wav " preload="auto " loop="false "></audio>
+            <button id="button-v" class="music-button" onclick="playPausev()"></button>
 
-            <audio id="button-cd" src="089_electro-funk.wav" preload="auto" loop="false"></audio>
-            <button id="button-cd" class="music-button" onclick="document.getElementById('button-cd').play();"></button>
+            <audio id="button-x" src="uno-duo-stereo-epiano-chord.wav " preload="auto " loop="false "></audio>
+            <button id="button-x" class="music-button" onclick="playPausex()"></button>
 
+            <audio id="button-y" src="one-mellow-piano-seventh.wav " preload="auto " loop="false "></audio>
+            <button id="button-y" class="music-button" onclick="playPausey()"></button>
+
+            <audio id="button-z" src="wobbly-swell-chord-D.wav " preload="auto " loop="false "></audio>
+            <button id="button-z" class="music-button" onclick="playPausez()"></button>
+
+
+
+
+            <audio id="button-ab" src="070_muted_funkiness.wav " preload="auto " loop="false "></audio>
+            <button id="button-ab" class="music-button" onclick="playPauseab()"></button>
+
+            <audio id="button-bc" src="120_do-do-do-do-vocals.wav " preload="auto " loop="false "></audio>
+            <button id="button-bc" class="music-button" onclick="playPausebc()"></button>
+
+            <audio id="button-cd" src="089_electro-funk.wav " preload="auto " loop="false "></audio>
+            <button id="button-cd" class="music-button" onclick="playPausecd()"></button>
+
+
+
+            <button id="button-loop" class="music-button" onclick="playSound()"></button>
+
+
+
+            <button id="pause" class="music-button"></button>
+
+            <button id="placeholder" class="music-button"></button>
 
         </div>
 
+
+
+
+        <script>
+            document.getElementById('pause').onclick = function() {
+                var sounds = document.getElementsByTagName('audio');
+                for (let i = 0; i < sounds.length; i++)
+                    sounds[i].pause();
+            };
+
+
+
+
+
+            var count = 1;
+
+            function setColor(btn, color) {
+
+                var property = document.getElementById("button-a");
+                if (count == 0) {
+                    property.style.backgroundColor = "#FFFFFF"
+                    count = 1;
+                } else {
+                    property.style.backgroundColor = "#7FFF00"
+                    count = 0;
+                }
+            }
+
+
+
+
+
+
+
+
+            var audio = new Audio(),
+                srcList = [],
+                number;
+            for (var i = 0; i < 10; i++) srcList.push(i + '.wav'); //Replace
+            function playSound() {
+                number = document.getElementById('music-studio').value;
+                audLoop(0);
+            }
+
+            function audLoop(i) {
+                if (!number || i >= number.length || !srcList[number[i]]) return;
+                audio.src = srcList[number[i]];
+                audio.play();
+                i++;
+                if (srcList[number[i]]) {
+                    audio.onended = setTimeout(audLoop.bind(null, i), 1000); // for Delay
+                } else {
+                    audio.onended = null;
+                }
+            }
+
+
+
+
+
+            var myVideo = document.getElementById("button-a");
+
+            function playPause() {
+
+
+
+
+
+
+
+                myVideo.currentTime = 0;
+
+                myVideo.loop = true;
+
+
+
+
+
+                if (myVideo.paused)
+                    myVideo.play();
+
+
+                else
+                    myVideo.pause();
+
+
+
+
+            }
+
+
+
+            var myVideob = document.getElementById("button-b");
+
+            function playPauseb() {
+
+                myVideob.currentTime = 0;
+
+
+                if (myVideob.paused)
+                    myVideob.play();
+                else
+                    myVideob.pause();
+            }
+
+
+
+
+
+
+
+
+            var myVideoc = document.getElementById("button-c");
+
+            function playPausec() {
+
+                myVideoc.currentTime = 0;
+
+
+                if (myVideoc.paused)
+                    myVideoc.play();
+                else
+                    myVideoc.pause();
+            }
+
+
+
+
+            var myVideod = document.getElementById("button-d");
+
+            function playPaused() {
+
+                myVideod.currentTime = 0;
+
+
+                if (myVideod.paused)
+                    myVideod.play();
+                else
+                    myVideod.pause();
+            }
+
+
+
+
+            var myVideoe = document.getElementById("button-e");
+
+            function playPausee() {
+
+                myVideoe.currentTime = 0;
+
+
+                if (myVideoe.paused)
+                    myVideoe.play();
+                else
+                    myVideoe.pause();
+            }
+
+
+
+
+            var myVideof = document.getElementById("button-f");
+
+            function playPausef() {
+
+                myVideof.currentTime = 0;
+
+
+                if (myVideof.paused)
+                    myVideof.play();
+                else
+                    myVideof.pause();
+            }
+
+
+
+
+            var myVideog = document.getElementById("button-g");
+
+            function playPauseg() {
+
+                myVideog.currentTime = 0;
+
+
+                if (myVideog.paused)
+                    myVideog.play();
+                else
+                    myVideog.pause();
+            }
+
+
+
+
+
+
+            var myVideoh = document.getElementById("button-h");
+
+            function playPauseh() {
+
+                myVideoh.currentTime = 0;
+
+
+                if (myVideoh.paused)
+                    myVideoh.play();
+                else
+                    myVideoh.pause();
+            }
+
+
+
+            var myVideoi = document.getElementById("button-i");
+
+            function playPausei() {
+
+                myVideoi.currentTime = 0;
+
+
+                if (myVideoi.paused)
+                    myVideoi.play();
+                else
+                    myVideoi.pause();
+            }
+
+
+            var myVideoj = document.getElementById("button-j");
+
+            function playPausej() {
+
+                myVideoj.currentTime = 0;
+
+
+                if (myVideoj.paused)
+                    myVideoj.play();
+                else
+                    myVideoj.pause();
+            }
+
+
+            var myVideok = document.getElementById("button-k");
+
+            function playPausek() {
+
+                myVideok.currentTime = 0;
+
+
+                if (myVideok.paused)
+                    myVideok.play();
+                else
+                    myVideok.pause();
+            }
+
+
+            var myVideol = document.getElementById("button-l");
+
+            function playPausel() {
+
+                myVideol.currentTime = 0;
+
+
+                if (myVideol.paused)
+                    myVideol.play();
+                else
+                    myVideol.pause();
+            }
+
+            var myVideom = document.getElementById("button-m");
+
+            function playPausem() {
+
+                myVideom.currentTime = 0;
+
+
+                if (myVideom.paused)
+                    myVideom.play();
+                else
+                    myVideom.pause();
+            }
+
+
+
+            var myVideon = document.getElementById("button-n");
+
+            function playPausen() {
+
+                myVideon.currentTime = 0;
+
+
+                if (myVideon.paused)
+                    myVideon.play();
+                else
+                    myVideon.pause();
+            }
+
+
+            var myVideoo = document.getElementById("button-o");
+
+            function playPauseo() {
+
+                myVideoo.currentTime = 0;
+
+
+                if (myVideoo.paused)
+                    myVideoo.play();
+                else
+                    myVideoo.pause();
+            }
+
+
+
+
+            var myVideop = document.getElementById("button-p");
+
+            function playPausep() {
+
+                myVideop.currentTime = 0;
+
+
+                if (myVideop.paused)
+                    myVideop.play();
+                else
+                    myVideop.pause();
+            }
+
+
+
+            var myVideoq = document.getElementById("button-q");
+
+            function playPauseq() {
+
+                myVideoq.currentTime = 0;
+
+
+                if (myVideoq.paused)
+                    myVideoq.play();
+                else
+                    myVideoq.pause();
+            }
+
+
+
+
+            var myVideor = document.getElementById("button-r");
+
+            function playPauser() {
+
+                myVideor.currentTime = 0;
+
+
+                if (myVideor.paused)
+                    myVideor.play();
+                else
+                    myVideor.pause();
+            }
+
+
+
+
+            var myVideos = document.getElementById("button-s");
+
+            function playPauses() {
+
+                myVideos.currentTime = 0;
+
+
+                if (myVideos.paused)
+                    myVideos.play();
+                else
+                    myVideos.pause();
+            }
+
+
+
+
+            var myVideot = document.getElementById("button-t");
+
+            function playPauset() {
+
+                myVideot.currentTime = 0;
+
+
+                if (myVideot.paused)
+                    myVideot.play();
+                else
+                    myVideot.pause();
+            }
+
+
+
+            var myVideou = document.getElementById("button-u");
+
+            function playPauseu() {
+
+                myVideou.currentTime = 0;
+
+
+                if (myVideou.paused)
+                    myVideou.play();
+                else
+                    myVideou.pause();
+            }
+
+
+
+            var myVideov = document.getElementById("button-v");
+
+            function playPausev() {
+
+                myVideov.currentTime = 0;
+
+
+                if (myVideov.paused)
+                    myVideov.play();
+                else
+                    myVideov.pause();
+            }
+
+
+            var myVideox = document.getElementById("button-x");
+
+            function playPausex() {
+
+                myVideox.currentTime = 0;
+
+
+                if (myVideox.paused)
+                    myVideox.play();
+                else
+                    myVideox.pause();
+            }
+
+            var myVideoy = document.getElementById("button-y");
+
+            function playPausey() {
+
+                myVideoy.currentTime = 0;
+
+
+                if (myVideoy.paused)
+                    myVideoy.play();
+                else
+                    myVideoy.pause();
+            }
+
+
+
+            var myVideoz = document.getElementById("button-z");
+
+            function playPausez() {
+
+                myVideoz.currentTime = 0;
+
+
+                if (myVideoz.paused)
+                    myVideoz.play();
+                else
+                    myVideoz.pause();
+            }
+
+
+
+
+
+            var myVideoab = document.getElementById("button-ab");
+
+            function playPauseab() {
+
+                myVideoab.currentTime = 0;
+
+
+                if (myVideoab.paused)
+                    myVideoab.play();
+                else
+                    myVideoab.pause();
+            }
+
+
+
+
+            var myVideobc = document.getElementById("button-bc");
+
+            function playPausebc() {
+
+                myVideobc.currentTime = 0;
+
+
+                if (myVideobc.paused)
+                    myVideobc.play();
+                else
+                    myVideobc.pause();
+            }
+
+
+
+
+            var myVideocd = document.getElementById("button-cd");
+
+            function playPausecd() {
+
+                myVideocd.currentTime = 0;
+
+
+                if (myVideocd.paused)
+                    myVideocd.play();
+                else
+                    myVideocd.pause();
+            }
+        </script>
 
 
 
